@@ -64,7 +64,7 @@ function Pomodoro() {
       setMinutes(sessionMinutes);
       setSeconds("00")
     }
-  }, [sessionMinutes]);
+  }, [sessionMinutes, timerPower]);
     
   /* Short but essential, it switches on the countdown timer, triggering a useEffect that controls it */ 
   function useTimer(){
@@ -169,7 +169,7 @@ function Pomodoro() {
       clearInterval(interval);
     }
     return () => clearInterval(interval);
-  }, [timerPower, countDown]);
+  }, [timerPower, countDown, breakLabel, breakMinutes, sessionMinutes ]);
     
    
    return (
